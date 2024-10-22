@@ -1,54 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".searchMovie">
+    android:background="@color/black">
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Поиск фильма"
             android:textColor="@color/white"
             android:textSize="48sp" />
-
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="24dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout4">
+        app:layout_constraintTop_toBottomOf="@id/name">
 
         <ImageView
             android:id="@+id/movieImage"
             android:layout_width="222dp"
             android:layout_height="320dp"
             android:layout_gravity="center"
-            android:onClick="movieImage"
-            android:src="@color/white"
-
-            android:contentDescription="TODO" />
+            android:contentDescription="Фотография фильма" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,71 +47,43 @@
                 android:id="@+id/movieName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="movieName"
                 android:text="MovieName"
                 android:textColor="@color/white"
                 android:textSize="32sp" />
 
             <TextView
                 android:id="@+id/movieYear"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:onClick="movieYear"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="32sp"
-                tools:ignore="TouchTargetSizeCheck" />
-
+                android:textSize="32sp" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/movieRating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="movieRating"
             android:text="MovieRating"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/editOn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/editOn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="editOn"
-                    android:text="Изменить данные фильма"
-                    android:textColor="@color/gray"
-                    android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </LinearLayout>
-
+            android:layout_height="wrap_content"
+            android:text="Изменить данные фильма"
+            android:textColor="@color/gray" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/roundedblackblock"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <EditText
             android:id="@+id/searchMovie"
@@ -134,78 +93,68 @@
             android:textColor="@color/white"
             android:textColorHint="#808080" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@id/linearLayout8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
         <LinearLayout
-            android:id="@+id/linearLayout7"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginHorizontal="144dp"
-            android:background="@drawable/searchbutton"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <Button
+                android:id="@+id/search"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="48dp"
+                android:background="@drawable/searchbutton"
+                android:text="Найти"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
 
-                <Button
-                    android:id="@+id/search"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/searchbutton"
-                    android:onClick="search"
-                    android:text="Найти"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/changeAccept"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/searchbutton"
-                    android:onClick="changeAccept"
-                    android:text="Применить"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:visibility="gone"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+            <Button
+                android:id="@+id/changeAccept"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/searchbutton"
+                android:text="Применить"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:visibility="gone" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/history"
-            android:onClick="history"
+            android:onClick="displaySearchHistory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="История поиска"
             android:textColor="@color/gray"/>
 
-    </LinearLayout>
+        <!-- Поля для редактирования данных фильма -->
+        <EditText
+            android:id="@+id/movieNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Новое название фильма"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:visibility="gone" /> <!-- Изначально скрыто -->
 
+        <EditText
+            android:id="@+id/movieYearEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Новый год фильма"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:visibility="gone" /> <!-- Изначально скрыто -->
+
+        <EditText
+            android:id="@+id/movieRatingEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Новый рейтинг фильма"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:visibility="gone" /> <!-- Изначально скрыто -->
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
